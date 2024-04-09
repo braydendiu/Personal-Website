@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; 
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body styling */
+body {
+    background: white;
+    color: black;
+}
+
+/* General styles for section titles */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem; 
+    margin-bottom: 1rem; 
+    padding-bottom: 10px; 
+    border-bottom: 3px solid rgb(133, 111, 255); 
+    display: inline-block; 
+}
+
+#header, #about, #experience, #contact {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+}
+
+/* Header styling */
+#header {
+    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start; 
+}
+.container {
+    width: 80%; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+}
+
+
+/* Navigation styling */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%;
+    padding: 20px 15%; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Styles for the website name/logo on the left */
+nav .my-name {
+    flex-grow: 1;
+}
+nav .nav-container {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+}
+
+
+#header, #about, #experience, #contact {
+    padding-top: 80px; 
+}
+
+/* Profile image and header text container */
+.header-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    height: calc(100vh - 60px); 
+    width: 100%; 
+    padding-top: 60px; 
+}
+
+/* Profile image styling */
+.profile-image {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 100px; 
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Header text styling */
+.header-text {
+    text-align: left;
+    max-width: 600px;
+}
+
+.header-text h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.my-name {
+    color: black;
+    font-size: 32px; 
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold; 
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    margin-right: 20px; 
+}
+.my-name::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(133, 111, 255);
+    position: absolute;
+    left: 0;
+    bottom: -6px; 
+    transition: width 0.5s ease-in-out;
+}
+
+.my-name:hover::after {
+    width: 35.5%;
+}
+
+/* Navigation labels on top right */
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px; 
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+    padding: 0;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-left: 20px;
+}
+
+/* Correcting icon size */
+.dark-mode-toggle .fa-moon, 
+.dark-mode-toggle .fa-sun {
+    font-size: 1.5rem;
+}
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(133, 111, 255);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+
+/*--------ABOUT SECTION--------*/
+
+#about .container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 50px 15px; 
+}
+
+.about-title {
+    text-align: center; 
+    font-size: 32px; 
+    margin-bottom: 1em; 
+}
+
+.about-content {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 2em; 
+}
+.about-left p, .about-right p, .about-left h2, .about-right h2 {
+    line-height: 1.6; 
+}
+.about-left p, .about-right p {
+    margin-bottom: 1rem; 
+}
+
+.about-left h2, .about-right h2 {
+    text-align: center;
+    margin-bottom: 1.5rem; 
+}
+.about-left, .about-right {
+    flex: 1; 
+    min-width: 300px; 
+    max-width: 50%;
+}
+.about-left {
+    flex-basis: 50%; 
+    text-align: left; 
+}
+
+.about-right ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+/* Styles for each skill item */
+.about-right ul li {
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: lightgray; 
+    color: black;
+    padding: 10px 15px;
+    margin: 15px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    flex: 0 0 calc(25% - 10px); 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+    transition: background-color 0.3s; 
+}
+
+.about-right ul li:nth-child(n+5) {
+    flex: 0 0 calc(33.333% - 10px);
+}
+
+.about-right ul li:hover {
+    background-color: rgb(133, 111, 255); 
+}
+
+.about-right ul li:last-child {
+    margin-right: 0;
+}
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-left, .about-right {
+        max-width: 100%;
+    }
+}
+
+/* ----------PORTFOLIO---------- */
+
+
+#experience .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}
+
+.experience-title {
+    font-size: 2.5rem; 
+    color: black;
+    margin-bottom: 2rem; 
+}
+
+.project-container {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 40px; 
+    width: 100%; 
+    padding-top: 3rem; 
+
+}
+
+.project {
+    flex-basis: calc(50% - 10px); 
+    position: relative;
+    overflow: hidden; 
+}
+
+.project img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project a {
+    display: block;
+}
+
+.project figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.project:hover figcaption {
+    opacity: 1;
+}
+
+.project:hover img {
+    transform: scale(1.05);
+}
+
+.project figcaption h3,
+.project figcaption p {
+    margin: 0;
+    padding: 0.5em;
+}
+
+@media (max-width: 768px) {
+    .project-container {
+        flex-direction: column;
+    }
+    .project {
+        flex-basis: 100%; 
+    }
+}
+
+/* -----------CONTACT----------- */
+.contact-heading {
+    text-align: center;
+    font-size: 2.5rem; 
+    color: black; 
+    padding: 10px 0; 
+    margin: 0 auto; 
+    width: 100%; 
+    box-shadow: 0px -10px 5px -10px rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+.contact-heading::before {
+    content: '';
+    position: absolute;
+    top: -10px; 
+    left: 0;
+    right: 0;
+    height: 10px;
+    box-shadow: 0px -8px 15px -10px gray;
+    z-index: -1; 
+}
+
+#footer-contact .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-details {
+    text-align: left;
+}
+
+.contact-details p {
+    margin: 5px 0; 
+}
+
+.social-media-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-media-icons a {
+    color: black; 
+    margin-left: 20px; 
+    font-size: 24px;
+}
+
+.social-media-icons a:hover {
+    color: #0077b5; 
+    text-decoration: none; 
+}
+
+
+@media (max-width: 768px) {
+    #footer-contact .container {
+        flex-direction: column-reverse;
+    }
+
+    .contact-details, .social-media-icons {
+        text-align: center; 
+        margin: 10px 0; 
+    }
+}
+
+/* ----------DARK/LIGHT MODE---------- */
+body.dark-mode {
+    background-color: black;
+    color: white;
+  }
+body.dark-mode .social-media-icons a {
+    color: white; 
+}
+body.dark-mode nav {
+    background-color: black; 
+    box-shadow: 0 2px 4px grey;
+}
+body.dark-mode nav .my-name,
+body.dark-mode nav ul li a,
+body.dark-mode .dark-mode-toggle i {
+    color: white;
+}
+body.dark-mode #header {
+    background-color: black; 
+}
+body.dark-mode nav ul li a {
+    color: white;
+}
+body.dark-mode .contact-heading {
+    color: white; 
+    box-shadow: 0px -8px 10px -10px lightgrey;
+}
+
+.dark-mode-toggle {
+    font-size: 1.5rem; 
+    display: flex;
+    align-items: center; 
+    border: none; 
+    background: none; 
+    cursor: pointer;
+}
+
+/* When dark mode is active */
+body.dark-mode .dark-mode-toggle .fa-moon {
+    display: none;
+}
+
+body.dark-mode .dark-mode-toggle .fa-sun {
+    display: inline-block;
+}
+  
+.dark-mode .dark-mode-toggle i.fa-moon {
+    display: none; 
+}
+  
+.dark-mode .dark-mode-toggle i.fa-sun {
+    display: inline; 
+}
+  
+.dark-mode-toggle i.fa-sun {
+    display: none; 
+}
+.dark-mode .social-media-icons a:hover {
+    color: #0077b5; 
+    text-decoration: none; 
+}

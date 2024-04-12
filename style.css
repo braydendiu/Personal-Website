@@ -551,15 +551,9 @@ body.dark-mode .dark-mode-toggle .fa-sun {
     }
 
     .nav-container {
-        display: none; /* Hide navigation links initially */
-        flex-direction: column;
-        align-items: center;
-        background-color: white; /* Background color for the dropdown */
-        position: absolute;
-        width: 100%;
-        top: 60px; /* Adjust this value based on your nav's height */
-        left: 0;
+        display: none;
     }
+    
 
     .nav-menu {
         flex-direction: column;
@@ -584,5 +578,13 @@ body.dark-mode .dark-mode-toggle .fa-sun {
 
     .header-text h1 {
         font-size: 24px;
+    }
+    body.dark-mode nav {
+        background-color: black; /* Dark background for the navbar */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Adjusted for visibility in dark mode */
+    }
+    
+    body.dark-mode .nav-menu li a {
+        color: white; /* Ensure text is visible in dark mode */
     }
 }

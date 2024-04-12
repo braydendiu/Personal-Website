@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Dark mode toggle setup
     const toggleButton = document.getElementById('dark-mode-toggle');
     const moonIcon = toggleButton.getElementsByClassName('fa-moon')[0];
     const sunIcon = toggleButton.getElementsByClassName('fa-sun')[0];
     
     toggleButton.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
+
         moonIcon.classList.toggle('active');
         sunIcon.classList.toggle('active');
     });
-
-    // Typing effect setup
+});
+document.addEventListener('DOMContentLoaded', function() {
     const typingSpan = document.getElementById('typing');
     const text = 'Hi, I am Brayden'; 
     let index = 0; 
@@ -19,17 +19,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (index < text.length) {
             typingSpan.textContent += text.charAt(index);
             index++;
-            setTimeout(type, 110);
+            setTimeout(type, 110); 
         }
     }
 
-    type();
-
-    // Hamburger menu setup
+    type(); 
+});
+document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger');
     const navContainer = document.querySelector('.nav-container');
 
-    hamburger.addEventListener('click', () => {
-        navContainer.style.display = navContainer.style.display === 'flex' ? 'none' : 'flex';
+    hamburger.addEventListener('click', function () {
+        navContainer.style.display = navContainer.style.display === 'block' ? 'none' : 'block';
     });
 });

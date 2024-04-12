@@ -25,11 +25,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
     type(); 
 });
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.querySelector('.hamburger');
-    const navContainer = document.querySelector('.nav-container');
-
-    hamburger.addEventListener('click', function () {
-        navContainer.style.display = navContainer.style.display === 'block' ? 'none' : 'block';
-    });
-});

@@ -30,12 +30,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const navContainer = document.querySelector('.nav-container');
 
     hamburger.addEventListener('click', () => {
-        // Toggle display
-        if (navContainer.style.display === "none" || !navContainer.style.display) {
-            navContainer.style.display = "flex";
-        } else {
-            navContainer.style.display = "none";
-        }
+        navContainer.style.display = navContainer.style.display === 'flex' ? 'none' : 'flex';
     });
-
 });

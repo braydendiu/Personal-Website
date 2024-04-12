@@ -527,12 +527,34 @@ body.dark-mode .dark-mode-toggle .fa-sun {
     z-index: 1001; /* Above other content */
 }
 
-/* Initially hide the navigation container on mobile */
 .nav-container {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    transition: all 0.3s;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: white; /* or any color that fits the design */
+    width: 200px; /* Adjust based on your design */
+    box-shadow: -1px 0 10px rgba(0,0,0,0.5); /* Optional */
+    z-index: 1500; /* Ensure it's above other content */
+}
+
+.nav-menu li a {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    text-align: right; /* Align text to the right */
+    color: black;
+    text-decoration: none;
+}
+
+/* Ensure the dark mode settings affect the nav container */
+body.dark-mode .nav-container {
+    background-color: black;
+}
+
+body.dark-mode .nav-menu li a {
+    color: white;
 }
 
 .nav-menu {
@@ -551,9 +573,15 @@ body.dark-mode .dark-mode-toggle .fa-sun {
     }
 
     .nav-container {
-        display: none;
+        display: none; /* Hide navigation links initially */
+        flex-direction: column;
+        align-items: center;
+        background-color: white; /* Background color for the dropdown */
+        position: absolute;
+        width: 100%;
+        top: 60px; /* Adjust this value based on your nav's height */
+        left: 0;
     }
-    
 
     .nav-menu {
         flex-direction: column;
@@ -578,13 +606,5 @@ body.dark-mode .dark-mode-toggle .fa-sun {
 
     .header-text h1 {
         font-size: 24px;
-    }
-    body.dark-mode nav {
-        background-color: black; /* Dark background for the navbar */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Adjusted for visibility in dark mode */
-    }
-    
-    body.dark-mode .nav-menu li a {
-        color: white; /* Ensure text is visible in dark mode */
     }
 }

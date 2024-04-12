@@ -13,7 +13,9 @@
     <div id="header">
         <nav>
             <a href="index.html" class="my-name">Brayden Diu</a>
-            <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+            <button class="hamburger">
+                <i class="fa fa-bars"></i> <!-- Ensure you have Font Awesome included if you use this icon -->
+            </button>
             <div class="nav-container">
                 <ul>
                     <li><a href='#header'>Home</a></li>
@@ -112,5 +114,15 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navContainer = document.querySelector('.nav-container');
+    
+        hamburger.addEventListener('click', function() {
+            navContainer.style.display = (navContainer.style.display === 'flex' ? 'none' : 'flex');
+        });
+    });
+    </script>
 </body>
 </html>

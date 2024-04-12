@@ -25,11 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     type(); 
 });
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.querySelector('.hamburger');
-    const navContainer = document.querySelector('.nav-container');
+{/* <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var hamburger = document.querySelector('.hamburger'); // changed const to var
+    var navContainer = document.querySelector('.nav-container'); // changed const to var
 
-    hamburger.addEventListener('click', function () {
-        navContainer.style.display = navContainer.style.display === 'block' ? 'none' : 'block';
+    hamburger.addEventListener('click', function() {
+        if (!navContainer.style.display || navContainer.style.display === 'none') {
+            navContainer.style.display = 'flex';
+        } else {
+            navContainer.style.display = 'none';
+        }
     });
 });
+</script> */}

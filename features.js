@@ -25,11 +25,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     type(); 
 });
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger-menu');
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
     const navContainer = document.querySelector('.nav-container');
 
     hamburger.addEventListener('click', () => {
-        navContainer.classList.toggle('active');
+        const isVisible = navContainer.style.visibility === "visible";
+
+        // Toggle visibility and opacity
+        navContainer.style.visibility = isVisible ? "hidden" : "visible";
+        navContainer.style.opacity = isVisible ? 0 : 1;
     });
 });

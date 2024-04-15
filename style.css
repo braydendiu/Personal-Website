@@ -512,3 +512,36 @@ body.dark-mode .dark-mode-toggle .fa-sun {
     color: #0077b5; 
     text-decoration: none; 
 }
+
+/* Hamburger Menu Icon */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+/* Responsive Navigation Styling */
+@media (max-width: 768px) {
+    .nav-container {
+        display: none; /* Hide the navigation container by default */
+        flex-direction: column;
+        position: absolute;
+        background-color: white;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .hamburger-menu {
+        display: block; /* Show the hamburger icon */
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 2000;
+    }
+
+    .nav-container.active {
+        display: flex; /* Show the navigation container when active */
+    }
+}

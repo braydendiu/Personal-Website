@@ -25,15 +25,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     type(); 
 });
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navContainer = document.querySelector('.nav-container');
 
-    hamburger.addEventListener('click', () => {
-        const isVisible = navContainer.style.visibility === "visible";
+    hamburger.addEventListener('click', function() {
+        // Toggle visibility and opacity for smooth transition
+        const isVisible = navContainer.style.visibility === 'visible';
+        if (isVisible) {
+            navContainer.style.opacity = '0';
+            navContainer.style.visibility = 'hidden';
+        } else {
+            navContainer.style.visibility = 'visible';
+            navContainer.style.opacity = '1';
+            navContainer.style.transition = 'visibility 0s linear 0s, opacity 0.5s linear';
+        }
+    });
 
-        // Toggle visibility and opacity
-        navContainer.style.visibility = isVisible ? "hidden" : "visible";
-        navContainer.style.opacity = isVisible ? 0 : 1;
+    // Continue with any other JS for dark mode toggling
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    const moonIcon = toggleButton.getElementsByClassName('fa-moon')[0];
+    const sunIcon = toggleButton.getElementsByClassName('fa-sun')[0];
+
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        moonIcon.classList.toggle('active');
+        sunIcon.classList.toggle('active');
     });
 });

@@ -515,33 +515,45 @@ body.dark-mode .dark-mode-toggle .fa-sun {
 
 /* Hamburger Menu Icon */
 .hamburger-menu {
-    display: none;
+    display: none; /* Hide hamburger menu on desktop */
     cursor: pointer;
     font-size: 28px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
 }
 
-/* Responsive Navigation Styling */
+/* Ensure nav-container is hidden by default on mobile */
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the navigation links */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%; /* Full width */
+    background-color: white; /* Background color */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transform: translateY(-100%); /* Hide above the viewport */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.nav-container.active {
+    transform: translateY(0); /* Bring into view */
+}
+
 @media (max-width: 768px) {
-    .nav-container {
-        display: none; /* Hide the navigation container by default */
-        flex-direction: column;
-        position: absolute;
-        background-color: white;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    }
-
     .hamburger-menu {
-        display: block; /* Show the hamburger icon */
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 2000;
+        display: block; /* Show hamburger on mobile */
     }
 
-    .nav-container.active {
-        display: flex; /* Show the navigation container when active */
+    nav ul {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Add vertical spacing */
     }
 }

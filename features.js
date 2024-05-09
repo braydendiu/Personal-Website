@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 document.addEventListener('DOMContentLoaded', function() {
     const typingSpan = document.getElementById('typing');
-    const text = 'Hi, I am Brayden'; 
+    const text = 'Hey, I am Brayden'; 
     let index = 0; 
 
     function type() {

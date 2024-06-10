@@ -508,6 +508,7 @@ body.dark-mode .dark-mode-toggle .fa-sun {
 .dark-mode-toggle i.fa-sun {
     display: none; 
 }
+
 .dark-mode .social-media-icons a:hover {
     color: #0077b5; 
     text-decoration: none; 

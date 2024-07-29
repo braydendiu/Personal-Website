@@ -25,3 +25,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     type(); 
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const aboutCards = document.querySelectorAll('.about-card');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            } else {
+                entry.target.classList.remove('active');
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    aboutCards.forEach((card) => observer.observe(card));
+});

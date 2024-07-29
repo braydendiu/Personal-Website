@@ -2,9 +2,8 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif; 
-    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+    box-sizing: border-box;
 }
-
 html {
     scroll-behavior: smooth;
 }
@@ -45,7 +44,6 @@ body {
     align-items: center; 
     justify-content: flex-start; 
 }
-
 .container {
     width: 80%; 
     max-width: 1200px;
@@ -57,6 +55,7 @@ body {
     align-items: center; 
     height: 100%; 
 }
+
 
 /* Navigation styling */
 nav {
@@ -78,12 +77,12 @@ nav {
 nav .my-name {
     flex-grow: 1;
 }
-
 nav .nav-container {
     display: flex;
     align-items: center;
     gap: 5px; 
 }
+
 
 #header, #about, #experience, #contact {
     padding-top: 80px; 
@@ -135,7 +134,6 @@ nav .nav-container {
     position: relative;
     margin-right: 20px; 
 }
-
 .my-name::after {
     content: '';
     width: 0;
@@ -175,21 +173,18 @@ nav ul {
 .dark-mode-toggle .fa-sun {
     font-size: 1.5rem;
 }
-
 nav ul li {
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
 }
-
-nav ul li a {
+nav ul li a{
     color: black;
     text-decoration: none;
     font-size: 18px;
     position: relative;
 }
-
-nav ul li a::after {
+nav ul li a::after{
     content: '';
     width: 0;
     height: 3px;
@@ -199,60 +194,104 @@ nav ul li a::after {
     bottom: -6px;
     transition: 0.5s;
 }
-
 nav ul li a:hover::after {
     width: 100%;
 }
 
-/* General styles for stacking sections */
-.stacking-section {
-    position: relative;
-    overflow: hidden;
-    background-color: white;
-    padding: 20px 0;
+
+
+/*--------ABOUT SECTION--------*/
+
+#about .container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 50px 15px; 
 }
 
-.stacking-section .container {
-    width: 100%;
-    position: relative;
+.about-title {
+    text-align: center; 
+    font-size: 32px; 
+    margin-bottom: 1em; 
 }
 
 .about-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 2em; 
+}
+.about-left p, .about-right p, .about-left h2, .about-right h2 {
+    line-height: 1.6; 
+}
+.about-left p, .about-right p {
+    margin-bottom: 1rem; 
 }
 
-.about-card {
-    width: 10%; /* Increased the width to take up more of the screen */
-    margin: 0 auto; /* Center the card */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px; /* Adjust padding for content inside the card */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background: white;
-    opacity: 0;
-    transform: translateY(100px);
-    transition: transform 0.6s ease, opacity 0.6s ease;
-    min-height: 40vh;
+.about-left h2, .about-right h2 {
+    text-align: center;
+    margin-bottom: 1.5rem; 
+}
+.about-left, .about-right {
+    flex: 1; 
+    min-width: 300px; 
+    max-width: 50%;
+}
+.about-left {
+    flex-basis: 50%; 
+    text-align: left; 
 }
 
-.stacking-section .container .about-card.active {
-    opacity: 1;
-    transform: translateY(0);
+.about-right ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    max-width: 600px; 
+    margin: 0 auto; 
 }
 
+/* Styles for each skill item */
+.about-right ul li {
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: lightgray; 
+    color: black;
+    padding: 10px 15px;
+    margin: 15px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    flex: 0 0 calc(25% - 10px); 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+    transition: background-color 0.3s; 
+}
+
+.about-right ul li:nth-child(n+5) {
+    flex: 0 0 calc(33.333% - 10px);
+}
+
+.about-right ul li:hover {
+    background-color: rgb(133, 111, 255); 
+}
+
+.about-right ul li:last-child {
+    margin-right: 0;
+}
 @media (max-width: 768px) {
-    .about-card {
+    .about-content {
         flex-direction: column;
-        text-align: center;
-        width: 95%; /* Adjust width for smaller screens */
+        align-items: center;
+    }
+
+    .about-left, .about-right {
+        max-width: 100%;
     }
 }
+
 /* ----------PORTFOLIO---------- */
+
+
 #experience .container {
     max-width: 1200px;
     margin: auto;
@@ -276,6 +315,7 @@ nav ul li a:hover::after {
     gap: 40px; 
     width: 100%; 
     padding-top: 3rem; 
+
 }
 
 .project {
@@ -334,7 +374,6 @@ nav ul li a:hover::after {
     .project-container {
         flex-direction: column;
     }
-    
     .project {
         flex-basis: 100%; 
     }
@@ -351,7 +390,6 @@ nav ul li a:hover::after {
     box-shadow: 0px -10px 5px -10px rgba(0, 0, 0, 0.5); 
     z-index: 1; 
 }
-
 .contact-heading::before {
     content: '';
     position: absolute;
@@ -401,6 +439,7 @@ nav ul li a:hover::after {
     text-decoration: none; 
 }
 
+
 @media (max-width: 768px) {
     #footer-contact .container {
         flex-direction: column-reverse;
@@ -416,31 +455,25 @@ nav ul li a:hover::after {
 body.dark-mode {
     background-color: black;
     color: white;
-}
-
+  }
 body.dark-mode .social-media-icons a {
     color: white; 
 }
-
 body.dark-mode nav {
     background-color: black; 
     box-shadow: 0 2px 4px grey;
 }
-
 body.dark-mode nav .my-name,
 body.dark-mode nav ul li a,
 body.dark-mode .dark-mode-toggle i {
     color: white;
 }
-
 body.dark-mode #header {
     background-color: black; 
 }
-
 body.dark-mode nav ul li a {
     color: white;
 }
-
 body.dark-mode .contact-heading {
     color: white; 
     box-shadow: 0px -8px 10px -10px lightgrey;
@@ -475,7 +508,6 @@ body.dark-mode .dark-mode-toggle .fa-sun {
 .dark-mode-toggle i.fa-sun {
     display: none; 
 }
-
 .dark-mode .social-media-icons a:hover {
     color: #0077b5; 
     text-decoration: none; 

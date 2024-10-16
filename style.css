@@ -90,7 +90,7 @@ nav ul li:first-child {
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: #000000; 
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -98,19 +98,18 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #e0e0e0;
+    color: #5c92e2; 
 }
-
 .my-name {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #000000; 
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .my-name:hover {
-    color: #e0e0e0;
+    color: #5c92e2; 
 }
 
 /* Dark Mode Toggle Styles */
@@ -148,8 +147,8 @@ body.dark-mode .dark-mode-toggle .fa-sun {
 
 /* Header Styles with Cool Blue Background and Visual Effects */
 #header {
-    background: linear-gradient(45deg, #1a3a8f, #4c87d0);
-    color: #ffffff;
+    background: linear-gradient(135deg, #e6f2ff 0%, #b3d9ff 100%);
+    color: #1a3a8f; 
     padding: 150px 0 100px;
     text-align: center;
     min-height: 100vh;
@@ -173,36 +172,40 @@ body.dark-mode .dark-mode-toggle .fa-sun {
     }
 }
 
-.floating-shape {
+.blurred-shape {
     position: absolute;
-    background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    pointer-events: none;
+    filter: blur(50px);
+    opacity: 0.5;
+    transition: transform 0.3s ease-out;
 }
 
 .shape1 {
-    width: 80px;
-    height: 80px;
+    width: 300px;
+    height: 300px;
+    background-color: #4d94ff;
     top: 10%;
-    left: 10%;
-    animation: float 8s infinite;
+    right: 5%;
 }
 
 .shape2 {
-    width: 120px;
-    height: 120px;
-    top: 70%;
-    right: 10%;
-    animation: float 10s infinite;
+    width: 200px;
+    height: 200px;
+    background-color: #80b3ff;
+    bottom: 15%;
+    left: 10%;
 }
 
 .shape3 {
-    width: 60px;
-    height: 60px;
-    top: 40%;
+    width: 150px;
+    height: 150px;
+    background-color: #1a75ff;
+    top: 50%;
     left: 50%;
-    animation: float 6s infinite;
+    transform: translate(-50%, -50%);
 }
+
+
 
 @keyframes float {
     0%, 100% {
@@ -246,20 +249,20 @@ body.dark-mode .dark-mode-toggle .fa-sun {
     font-size: 3.5rem;
     margin-bottom: 20px;
     font-family: 'Playfair Display', serif;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #000000;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); 
 }
 
 .header-text .subtitle {
     font-size: 1.3rem;
     margin-bottom: 30px;
-    color: #e0e0e0;
+    color: #000000; 
 }
 
 .cta-button {
     display: inline-block;
-    background: #ffffff;
-    color: #1a3a8f;
+    background: #1a3a8f; 
+    color: #ffffff; 
     padding: 15px 40px;
     border-radius: 30px;
     text-decoration: none;
@@ -269,7 +272,7 @@ body.dark-mode .dark-mode-toggle .fa-sun {
 }
 
 .cta-button:hover {
-    background: #e0e0e0;
+    background: #2c4770; 
     transform: translateY(-3px);
 }
 
@@ -458,6 +461,7 @@ body.dark-mode {
 
 body.dark-mode #header {
     background: linear-gradient(45deg, #0a1a3f, #2c4770);
+    color: #ffffff; 
 }
 
 body.dark-mode nav {
@@ -524,6 +528,21 @@ body.dark-mode nav ul li a {
 body.dark-mode .my-name:hover,
 body.dark-mode nav ul li a:hover {
     color: var(--accent-color);
+}
+
+body.dark-mode .header-text h1,
+body.dark-mode .header-text .subtitle {
+    color: #ffffff; 
+}
+
+/* Light mode styles for the sun icon */
+.dark-mode-toggle .fa-sun {
+    color: #000000;
+}
+
+/* Dark mode styles for the sun icon */
+body.dark-mode .dark-mode-toggle .fa-sun {
+    color: #ffffff; 
 }
 
 /* Responsive adjustments */
